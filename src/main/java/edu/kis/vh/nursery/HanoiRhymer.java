@@ -2,7 +2,7 @@ package edu.kis.vh.nursery;
 
 public class HanoiRhymer extends DefaultCountingOutRhymer {
 
-    int totalRejected = 0; // wiersz 5 był źle sformatowany
+    private int totalRejected = 0; // wiersz 5 był źle sformatowany
 
     public int reportRejected() {
         return totalRejected;
@@ -16,6 +16,10 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
             totalRejected++;
         else
             super.countIn(in);
+    }
+
+    public int getTotalRejected() {
+        return totalRejected;
     }
 }
 

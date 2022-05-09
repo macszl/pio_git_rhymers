@@ -1,16 +1,18 @@
 package edu.kis.vh.nursery.list;
 
-public class IntLinkedList {
+class IntLinkedList {
+
 
     public static final int ERROR_RETURN_VAL = -1;
-    Node last;
+    private Node last;
+    int i;
 
     public void push(int i) {
         if (last == null)
             last = new Node(i);
         else {
             last.next = new Node(i);
-            last.next.prev = last;
+            last.next.setPrev(last);
             last = last.next;
         }
     }
@@ -36,5 +38,10 @@ public class IntLinkedList {
         last = last.prev;
         return ret;
     }
+
+    public Node getLast() {
+        return last;
+    }
+
 
 }

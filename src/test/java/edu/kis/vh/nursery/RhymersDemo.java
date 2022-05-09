@@ -5,7 +5,6 @@ import edu.kis.vh.nursery.factory.RhymersFactory;
 
 class RhymersDemo {
 
-
 	public static final int RAND_UPPER_BOUND = 20;
 	public static final int HANOI_RHYMER_IDX = 3;
 	public static final int TEST_VAL = 15;
