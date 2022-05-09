@@ -7,10 +7,10 @@ public class RhymersJUnitTest {
 
 	public void testCountIn() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
-		int testValue = 4;
+		final int testValue = 4;
 		rhymer.countIn(testValue);
 
-        int result = rhymer.peekaboo();
+        final int result = rhymer.peekABoo();
         Assert.assertEquals(testValue, result);
     }
 
@@ -21,7 +21,8 @@ public class RhymersJUnitTest {
 		boolean result = rhymer.callCheck();
 		Assert.assertEquals(true, result);
 
-        rhymer.countIn(888);
+        final int testValue = 888;
+        rhymer.countIn(testValue);
 
         result = rhymer.callCheck();
         Assert.assertEquals(false, result);
@@ -32,13 +33,14 @@ public class RhymersJUnitTest {
 	public void testIsFull() {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
 		final int STACK_CAPACITY = 12;
+        final int testValue = 888;
 		for (int i = 0; i < STACK_CAPACITY; i++) {
 			boolean result = rhymer.isFull();
 			Assert.assertEquals(false, result);
-			rhymer.countIn(888);
+			rhymer.countIn(testValue);
 		}
 
-        boolean result = rhymer.isFull();
+        final boolean result = rhymer.isFull();
         Assert.assertEquals(true, result);
     }
 
@@ -47,15 +49,15 @@ public class RhymersJUnitTest {
 		DefaultCountingOutRhymer rhymer = new DefaultCountingOutRhymer();
 		final int EMPTY_STACK_VALUE = -1;
 
-        int result = rhymer.peekaboo();
+        int result = rhymer.peekABoo();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
 
-        int testValue = 4;
+        final int testValue = 4;
         rhymer.countIn(testValue);
 
-        result = rhymer.peekaboo();
+        result = rhymer.peekABoo();
         Assert.assertEquals(testValue, result);
-        result = rhymer.peekaboo();
+        result = rhymer.peekABoo();
         Assert.assertEquals(testValue, result);
     }
 
@@ -68,7 +70,7 @@ public class RhymersJUnitTest {
         int result = rhymer.countOut();
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
 
-        int testValue = 4;
+        final int testValue = 4;
         rhymer.countIn(testValue);
 
         result = rhymer.countOut();

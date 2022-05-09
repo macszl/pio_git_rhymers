@@ -10,8 +10,9 @@ public class HanoiRhymer extends DefaultCountingOutRhymer {
 
     // wiersz 12 był źle sformatowany
     // wiersz 15 i 16 był źle sformatowany
+    @Override
     public void countIn(int in) {
-        if (!callCheck() && in > peekaboo())
+        if (!callCheck() && in > peekABoo())
             totalRejected++;
         else
             super.countIn(in);
